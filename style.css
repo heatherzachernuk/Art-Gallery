@@ -1,0 +1,61 @@
+body {
+    background-color: black;
+    font-family: Montserrat, "Helvetica Neue", sans-serif;
+    font-size: 3em;
+    font-weight: 800;
+    color: #2B2B2B;
+    overflow: hidden;
+}
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    font-size: 1.5em;
+}
+
+#container {
+    background-color: white;
+    height: 95vh;
+    width: 95vw;
+    margin: 0 auto;
+    padding: 0;
+    transform: translate(0, 1vh);
+}
+
+#header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#navigation {
+    position: absolute;
+    margin-left: 1em;
+}
+
+#nav-title {
+    color: lightgray;
+    font-size: 0.5em;
+    transition: all 0.75s;
+}
+
+#nav-title:hover {
+    color: black;
+}
+
+#nav-list {
+    display: none;
+    margin-top: 1em;
+    font-size: 0.3em;
+}
+
+#thumb-container{
+    position: relative;
+    width: 41%;
+    margin: 0 auto;
+    outline: thin solid red;
+}
+.thumbs {
+    float: left;
+    margin: 1vh;
+}
