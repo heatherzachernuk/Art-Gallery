@@ -62,14 +62,14 @@ var artistData =  {
     },
 };
 
-    var artistList = []; //same as saying "new Array();"
+var artistList = [];
 
 //this displays the list of artists on the left of the screen
 for (var artistName in artistData) {
     var artistEntry = artistData[artistName];
     var artistListing = document.createElement("a");
     artistListing.innerText = artistEntry.name + "\n" + "\n";
-    document.getElementById("listSpace").appendChild(artistListing);
+    document.getElementById("nav-list").appendChild(artistListing);
     artistListing.addEventListener("click", clickName);
     artistList.push(artistEntry.name);
 }
@@ -89,29 +89,24 @@ function clickName(event){
 }
 
 function populatePage(artistEntry){
-    var headerTitle = document.querySelector(".header");
-    var websiteReference = document.querySelector(".footer");
+    var headerTitle = document.querySelector("#header");
+    // var websiteReference = document.querySelector(".footer");
 
     currentArtist = artistEntry;
 
-
     //this part puts the thumbnails in the gallery space
-    var frameContent = document.querySelectorAll(".frame");
+    var frameContent = document.querySelectorAll(".thumbs");
     for (var i = 0; i<frameContent.length; i++){
         frameContent[i].querySelector("img").src = "images/" + artistEntry.name + "/" + artistEntry.thumbs[i];
     }
 
-
         //this part sets the link from the thumbnail to the full size image 
         //When you don't have lightbox installed, it just opens the full-size image on a new page.
-        var fullImage = document.querySelectorAll(".frame");
+        var fullImage = document.querySelectorAll(".thumbs");
         for (var i = 0; i<fullImage.length; i++){
             fullImage[i].querySelector("a").href = "images/" + artistEntry.name + "/" + artistEntry.images[i];
         } 
 
         headerTitle.innerText = artistEntry.name;
        // websiteReference.querySelector("a").href = artistEntry.website;
-
-
-
-   }
+}
