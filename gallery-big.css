@@ -1,0 +1,43 @@
+@media only screen 
+        and (min-device-width: 768px)
+   	    and (orientation: landscape) {
+    
+    #container {
+    width: 75vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.3fr 4fr 4fr 0.7fr;
+    /* outline: thin solid red; */
+
+    }
+    #header {
+        font-size: 1.5em;
+        grid-column: 1/ span 2;
+        grid-row: 1/ span 1;
+        margin-top: 0.5em;
+        /* outline: thin solid red; */
+    }
+    #nav-list{
+        font-size: 0.75em;
+        grid-column: 1/ span 2;
+        grid-row: 1/ span 3;
+        margin-top: 2em;
+        width: 40%;
+    }
+    #thumb-container{
+        grid-column: 1/ span 2;
+        grid-row: 2/ span 2;
+        /* outline: thin solid red; */
+    }
+    
+    #thumbs-top-row {
+        grid-column: 1/ span 2;
+        grid-row: 2/ span 1;
+        /* outline: thin solid red; */
+    }
+    
+    #thumbs-bottom-row {
+        grid-column: 1/ span 2;
+        grid-row: 3/ span 1;
+        /* outline: thin solid red; */
+    }
+}

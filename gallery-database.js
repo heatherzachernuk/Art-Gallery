@@ -33,8 +33,8 @@ var artistData =  {
         name: "Henri Rousseau",
         images:  ["hr1.jpg","hr2.jpg","hr3.jpg","hr4.jpg"],
         thumbs:  ["hr1t.jpg","hr2t.jpg","hr3t.jpg","hr4t.jpg"],
-        website: "http://www.henrirousseau.net/"
-        
+        website: "http://www.henrirousseau.org/"
+
     },
     MCEscher: {
         name: "M C Escher",
@@ -62,21 +62,14 @@ var artistData =  {
     },
 };
 
-let artistList = [];
-const overlay = document.getElementById("overlay");
-let thumbs = document.querySelectorAll(".thumbs");
-const next = document.getElementById("next");
-const prev = document.getElementById("prev");
-next.addEventListener("click", nextSlide);
-prev.addEventListener("click", prevSlide);
-const fullImage = document.getElementById("full-image");
+    var artistList = []; //same as saying "new Array();"
 
 //this displays the list of artists on the left of the screen
 for (var artistName in artistData) {
     var artistEntry = artistData[artistName];
     var artistListing = document.createElement("a");
     artistListing.innerText = artistEntry.name + "\n" + "\n";
-    document.getElementById("nav-list").appendChild(artistListing);
+    document.getElementById("listSpace").appendChild(artistListing);
     artistListing.addEventListener("click", clickName);
     artistList.push(artistEntry.name);
 }
@@ -92,88 +85,29 @@ function clickName(event){
         if(artistData[key].name==targetKey) {
             populatePage(artistData[key]);
         }
-    }
+    } document.getElementById("nav-title").style.color = "black";
 }
 
 function populatePage(artistEntry){
-    var headerTitle = document.querySelector("#header");
-    // var websiteReference = document.querySelector(".footer");
+    var headerTitle = document.querySelector(".header");
+    var websiteReference = document.querySelector(".footer");
+
     currentArtist = artistEntry;
+
     //this part puts the thumbnails in the gallery space
-    var frameContent = document.querySelectorAll(".thumbs");
+    var frameContent = document.querySelectorAll(".frame");
     for (var i = 0; i<frameContent.length; i++){
         frameContent[i].querySelector("img").src = "images/" + artistEntry.name + "/" + artistEntry.thumbs[i];
     }
-    //adds a link to every thumbnail to the full size image 
-    for (var i = 0; i < thumbs.length; i++){
-        thumbs[i].querySelector("a").href = "images/" + artistEntry.name + "/" + artistEntry.images[i];
-    } 
-    headerTitle.innerText = artistEntry.name;
-    document.getElementById("artist-link").querySelector("a").href = artistEntry.website;
-    thumbEventListener();
-}
 
-// adding an eventListener to every thumbnail
-function thumbEventListener(){
-    for(var i=0; i < thumbs.length; i++){
-        document.getElementById("thumb-"+(i+1)).addEventListener("click", ()=> showSlide(event));
-    }
-}
 
-function showSlide(event){
-    event.preventDefault();
-    fullImage.src = event.currentTarget.querySelector("a").href;
-    overlay.style.opacity = 0;
-    overlay.style.display = "block";
-    fadeIn(overlay);
-    for(var i=1; i<thumbs.length; i++){
-            document.getElementById("thumb-"+i).removeEventListener("click", ()=> showSlide(event));
-    }
-    fullImage.addEventListener("click", closeModal);    
-}
+        //this part sets the link from the thumbnail to the full size image 
+        //When you don't have lightbox installed, it just opens the full-size image on a new page.
+        var fullImage = document.querySelectorAll(".frame");
+        for (var i = 0; i<fullImage.length; i++){
+            fullImage[i].querySelector("a").href = "images/" + artistEntry.name + "/" + artistEntry.images[i];
+        } 
 
-function closeModal(){
-    overlay.removeEventListener("click", closeModal);
-    fadeOut(overlay);
-}
-
-function fadeOut(object){
-    object.style.opacity = 1;
-    let dim = setInterval(()=>{ 
-        object.style.opacity = parseFloat(object.style.opacity) - 0.05;
-        if(parseFloat(object.style.opacity) <= 0){
-            clearInterval(dim)
-            object.style.display = "none";
-        }
-    }, 20);  
-}
-
-function fadeIn(object){
-    object.style.opacity = 0;
-    let brighten = setInterval(()=>{ 
-        object.style.opacity = parseFloat(object.style.opacity) + 0.05;
-        if(parseFloat(object.style.opacity) >= 1){
-            clearInterval(brighten)
-        }
-    }, 20);  
-}
-
-function nextSlide(){
-    let url = fullImage.src.toString();
-    let start = url.slice(0, -5);
-    let index =parseInt(url.slice(-5, -4));
-    if(index === 4){
-        fullImage.src = start + "1.jpg";
-    } else fullImage.src = start + (index+1) + ".jpg"
-    fadeIn(fullImage);
-}
-
-function prevSlide(){
-    let url = fullImage.src.toString();
-    let start = url.slice(0, -5);
-    let index =parseInt(url.slice(-5, -4));
-    if(index === 1){
-        fullImage.src = start + "4.jpg";
-    } else fullImage.src = start + (index-1) + ".jpg";
-    fadeIn(fullImage)
-}
+        headerTitle.innerText = artistEntry.name;
+       // websiteReference.querySelector("a").href = artistEntry.website;
+   }

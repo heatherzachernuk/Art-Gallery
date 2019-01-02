@@ -1,43 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Artist Gallery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="gallery-x.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="gallery-x-big.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="gallery-x-small.css" />
+    <script src="https://unpkg.com/react@15/dist/react.min.js"> </script><script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js">
+    </script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 </head>
 <body>
     <div id="container">
+        
         <div id="header">
             Gallery
         </div>
-        <div id="navigation">
-            <div id="nav-title">
-            Artists                
-            </div>
-            <div id="nav-list">
-
+        <div id="nav-list">
+        </div>
+        <div id="overlay">
+            <div id="image-holder">
+                <div class="change-slide" id="prev">&#8920;</div>
+                <img id="full-image" src=""/>
+                <div class="change-slide" id="next">&#8921;</div>
             </div>
         </div>
         <div id="thumb-container">
-            <div class="thumbs" id="thumb-1">
-                <a><img /></a> 
+            <div id="thumbs-top-row">
+                <div class="thumbs" id="thumb-1">
+                    <a class="link"></a><img /></a> 
+                </div>
+                <div class="thumbs" id="thumb-2">
+                    <a class="link"><img /></a>                 
+                </div>
             </div>
-            <div class="thumbs" id="thumb-2">
-                <a><img /></a>                 
-            </div>
-            <div class="thumbs" id="thumb-3">
-                <a><img /></a> 
-            </div>
-            <div class="thumbs" id="thumb-4">
-                <a><img /></a>                  
+            <div id="thumbs-bottom-row">
+                <div class="thumbs" id="thumb-3">
+                    <a class="link"><img /></a> 
+                </div>
+                <div class="thumbs" id="thumb-4">
+                    <a class="link"><img /></a>                  
+                </div>
             </div>
         </div>
-
-    </div>
-    <script type="text/javascript" src="gallery.js"></script>
-    <script type="text/javascript" src="nav.js"></script>
+        <div id="artist-link">
+            <a target="_blank">artist site</a>
+        </div>
+    <script type="text/javascript" src="gallery-x.js"></script>
+    <script type="text/javascript" src="nav-x.js"></script>
+    <!-- <script type="text/javascript" src="Slideshow.js"></script> -->
 </body>
 </html>
