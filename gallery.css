@@ -41,6 +41,11 @@ a {
     line-height: 1;
     text-align: center;
     padding-top: 2em;
+    cursor: pointer;
+}
+
+#nav-list>a:hover{
+    text-shadow: 1px 1px 5px white;
 }
 
 .thumbs {
