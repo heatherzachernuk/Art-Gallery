@@ -55,6 +55,7 @@ a {
 .thumbs img {
     border-radius: 0.2em;
     box-shadow: 0.05em 0.05em 0.2em #888888;
+    cursor: pointer;
 } 
 
 #overlay {
@@ -78,6 +79,7 @@ a {
 #full-image {
     max-height: 100%;
     max-width: 100%;
+    cursor: pointer;
 }
 
 .change-slide {
