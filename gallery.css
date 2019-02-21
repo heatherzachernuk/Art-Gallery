@@ -86,6 +86,7 @@ a {
     color: white; 
     position: fixed;
     top: 50%;
+    cursor: pointer;
 }
 
 #next {
