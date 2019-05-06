@@ -96,20 +96,23 @@ function clickName(event){
 }
 
 function populatePage(artistEntry){
-    var headerTitle = document.querySelector("#header-text");
+    var headerTitle = document.querySelector("#header");
     // var websiteReference = document.querySelector(".footer");
     currentArtist = artistEntry;
     //this part puts the thumbnails in the gallery space
     var frameContent = document.querySelectorAll(".thumbs");
     for (var i = 0; i<frameContent.length; i++){
-        frameContent[i].querySelector("img").src = "images/" + artistEntry.name + "/" + artistEntry.thumbs[i];
+        frameContent[i].querySelector("img").src = "images/" 
+        + artistEntry.name + "/" + artistEntry.thumbs[i];
     }
     //adds a link to every thumbnail to the full size image 
     for (var i = 0; i < thumbs.length; i++){
-        thumbs[i].querySelector("a").href = "images/" + artistEntry.name + "/" + artistEntry.images[i];
+        thumbs[i].querySelector("a").href = "images/" 
+        + artistEntry.name + "/" + artistEntry.images[i];
     } 
-    headerTitle.innerText = artistEntry.name;
-    document.getElementById("artist-link").querySelector("a").href = artistEntry.website;
+    headerTitle.innerText = <i class="material-icons icon">list</i> + artistEntry.name;
+    document.getElementById("artist-link").querySelector("a").href = 
+        artistEntry.website;
     thumbEventListener();
 }
 
