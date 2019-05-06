@@ -33,6 +33,10 @@ a {
     text-shadow: 1px 1px 3px gray;
 }
 
+.icon {
+    float: left;
+}
+
 #nav-list{
     display: none;
     color: white;
