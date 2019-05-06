@@ -140,9 +140,11 @@ function showSlide(event){
 }
 
 function closeModal(){
-    imageHolder.removeEventListener("click", closeModal);
-    overlay.removeEventListener("click", closeModal);
-    fadeOut(overlay);
+    if(event.target != next  && event.target != prev){
+        imageHolder.removeEventListener("click", closeModal);
+        overlay.removeEventListener("click", closeModal);
+        fadeOut(overlay);
+    }
 }
 
 function fadeOut(object){
