@@ -62,6 +62,7 @@ var artistData =  {
     },
 };
 
+const icon = '<i class="material-icons">list</i>';
 let artistList = [];
 const overlay = document.getElementById("overlay");
 let thumbs = document.querySelectorAll(".thumbs");
@@ -110,7 +111,7 @@ function populatePage(artistEntry){
         thumbs[i].querySelector("a").href = "images/" 
         + artistEntry.name + "/" + artistEntry.images[i];
     } 
-    headerTitle.innerText = '<i class="material-icons icon">list</i>' + artistEntry.name;
+    headerTitle.innerText = icon + artistEntry.name;
     document.getElementById("artist-link").querySelector("a").href = 
         artistEntry.website;
     thumbEventListener();
