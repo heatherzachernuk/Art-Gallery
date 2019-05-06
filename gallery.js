@@ -111,8 +111,8 @@ function populatePage(artistEntry){
         thumbs[i].querySelector("a").href = "images/" 
         + artistEntry.name + "/" + artistEntry.images[i];
     } 
-    headerTitle.innerText = artistEntry.name;
-    headerTitle.prepend(icon + " ");
+    headerTitle.innerText = " " + artistEntry.name;
+    headerTitle.prepend(icon);
     document.getElementById("artist-link").querySelector("a").href = 
         artistEntry.website;
     thumbEventListener();
