@@ -65,6 +65,7 @@ var artistData =  {
 const icon = document.getElementById("icon");
 let artistList = [];
 const overlay = document.getElementById("overlay");
+const imageHolder = document.getElementById("image-holder");
 let thumbs = document.querySelectorAll(".thumbs");
 const next = document.getElementById("next");
 const prev = document.getElementById("prev");
@@ -134,10 +135,12 @@ function showSlide(event){
     for(var i=1; i<thumbs.length; i++){
             document.getElementById("thumb-"+i).removeEventListener("click", ()=> showSlide(event));
     }
-    fullImage.addEventListener("click", closeModal);    
+    imageHolder.addEventListener("click", closeModal); 
+    overlay.addEventListener("click", closeModal);   
 }
 
 function closeModal(){
+    imageHolder.removeEventListener("click", closeModal);
     overlay.removeEventListener("click", closeModal);
     fadeOut(overlay);
 }

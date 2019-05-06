@@ -33,7 +33,7 @@ a {
     text-shadow: 1px 1px 3px gray;
 }
 
-.icon {
+#icon {
     font-size: 1em;
 }
 
@@ -91,6 +91,8 @@ a {
     position: fixed;
     top: 50%;
     cursor: pointer;
+    padding: 2em;
+    margin: -2em;
 }
 
 #next {
