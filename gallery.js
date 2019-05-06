@@ -62,7 +62,7 @@ var artistData =  {
     },
 };
 
-const icon = '<i class="material-icons">list</i>';
+const icon = document.getElementById("icon");
 let artistList = [];
 const overlay = document.getElementById("overlay");
 let thumbs = document.querySelectorAll(".thumbs");
