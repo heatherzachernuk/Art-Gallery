@@ -110,7 +110,7 @@ function populatePage(artistEntry){
         thumbs[i].querySelector("a").href = "images/" 
         + artistEntry.name + "/" + artistEntry.images[i];
     } 
-    headerTitle.innerText = <i class="material-icons icon">list</i> + artistEntry.name;
+    headerTitle.innerText = '<i class="material-icons icon">list</i>' + artistEntry.name;
     document.getElementById("artist-link").querySelector("a").href = 
         artistEntry.website;
     thumbEventListener();
