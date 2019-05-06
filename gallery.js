@@ -96,7 +96,7 @@ function clickName(event){
 }
 
 function populatePage(artistEntry){
-    var headerTitle = document.querySelector("#header");
+    var headerTitle = document.querySelector("#header-text");
     // var websiteReference = document.querySelector(".footer");
     currentArtist = artistEntry;
     //this part puts the thumbnails in the gallery space
