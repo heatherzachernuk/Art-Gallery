@@ -112,7 +112,7 @@ function populatePage(artistEntry){
         + artistEntry.name + "/" + artistEntry.images[i];
     } 
     headerTitle.innerText = artistEntry.name;
-    headerTitle.prepend(icon);
+    headerTitle.prepend(icon + " ");
     document.getElementById("artist-link").querySelector("a").href = 
         artistEntry.website;
     thumbEventListener();
